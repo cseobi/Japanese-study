@@ -1,0 +1,113 @@
+:root {
+  color-scheme: light;
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --paper: #f6f3ec;
+  --card: #fffdf8;
+  --line: #e4dccb;
+  --accent: #0f4c5c;
+  --ok: #1f7a4d;
+  --bad: #a33b32;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Yu Gothic", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+header, main, #set-list {
+  width: min(40rem, calc(100% - 2rem));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header { padding: 1.5rem 0 0.5rem; }
+
+h1 { font-size: 1.7rem; line-height: 1.3; margin: 0 0 0.25rem; }
+h2 { font-size: 1.3rem; margin: 0; }
+header p { margin: 0; color: var(--muted); }
+
+#set-list { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem 0; }
+
+.set-card, button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.set-card {
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  min-height: 3rem;
+}
+
+.set-card.active { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+
+.quiz-head, .q {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.score { font-weight: 700; margin: 0.4rem 0; }
+
+.actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  min-height: 3rem;
+}
+
+button.secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+
+.inst { margin: 0 0 0.4rem; }
+.prompt {
+  font-size: 1.35rem;
+  line-height: 2.2;
+  margin: 0.2rem 0 0.7rem;
+}
+
+ruby rt { font-size: 0.5em; }
+
+textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1.15rem;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  resize: vertical;
+}
+
+.grade { margin-top: 0.6rem; }
+
+.result { margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.result p { margin: 0.2rem 0; }
+.result.ok strong { color: var(--ok); }
+.result.bad strong { color: var(--bad); }
+.explain { color: var(--muted); }
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+main { padding-bottom: 2rem; }
